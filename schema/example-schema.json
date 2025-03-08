@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Organization",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "組織名"
+    },
+    "employees": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/employee"
+      },
+      "description": "従業員リスト"
+    },
+    "subDepartments": {
+      "type": "array",
+      "items": {
+        "$ref": "#"
+      },
+      "description": "部署リスト"
+    }
+  },
+  "definitions": {
+    "employee": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "従業員名"
+        },
+        "role": {
+          "type": "string",
+          "description": "役職"
+        },
+        "reportsTo": {
+          "$ref": "#/definitions/employee",
+          "description": "上司"
+        }
+      }
+    }
+  }
+}
