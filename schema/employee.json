@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Employee",
+  "definitions": {
+    "employee": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "従業員名"
+        },
+        "birthday": {
+          "type": "string",
+          "description": "誕生日"
+        },
+        "role": {
+          "type": "string",
+          "description": "役職"
+        },
+        "reportsTo": {
+          "$ref": "#/definitions/employee",
+          "description": "上司"
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@
     "employees": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/employee"
+        "$ref": "employee.json#/definitions/employee"
       },
       "description": "従業員リスト"
     },
@@ -20,24 +20,12 @@
         "$ref": "#"
       },
       "description": "部署リスト"
-    }
-  },
-  "definitions": {
-    "employee": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "従業員名"
-        },
-        "role": {
-          "type": "string",
-          "description": "役職"
-        },
-        "reportsTo": {
-          "$ref": "#/definitions/employee",
-          "description": "上司"
-        }
+    },
+    "additionalProperties": {
+      "description": "key:id, value: valueのマップ",
+      "^[0-9]+$": {
+        "description": "hoge",
+        "type": "number"
       }
     }
   }
