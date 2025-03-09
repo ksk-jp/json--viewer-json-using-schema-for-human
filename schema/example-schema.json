@@ -22,7 +22,7 @@
       "description": "部署リスト"
     },
     "additionalProperties": {
-      "description": "key:id, value: valueのマップ",
+      "description": "hoge",
       "^[0-9]+$": {
         "description": "hoge",
         "type": "number"
